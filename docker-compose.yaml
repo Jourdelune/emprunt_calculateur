@@ -1,0 +1,7 @@
+services:
+  web:
+    build: 
+      context: .
+      target: contacts_nginx
+    ports:
+        - 8080:80
