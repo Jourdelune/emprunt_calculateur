@@ -1,87 +1,142 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculateur d'emprunt</title>
+    <title>Calculateur d'Amortissement d'Emprunt | Simulateur de Crédit en Ligne</title>
+    <meta name="description" content="Simulez gratuitement votre crédit avec notre calculateur d'amortissement d'emprunt. Calculez vos mensualités, intérêts et tableau d'amortissement en quelques clics.">
+    <meta name="keywords" content="calculateur emprunt, simulation crédit, amortissement prêt, tableau d'amortissement, mensualités crédit">
+    <meta name="author" content="Votre Nom ou Entreprise">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jourdelune.github.io/loan-tool/">
     <link rel="stylesheet" href="style/app.css">
     <meta name="google-site-verification" content="QZZTjZ7JiECinc6QQ8xFZUcYaoJEq_CKhaTTrPxUhNQ" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jourdelune.github.io/loan-tool/">
+    <meta property="og:title" content="Calculateur d'Amortissement d'Emprunt | Simulateur de Crédit">
+    <meta property="og:description" content="Simulez gratuitement votre crédit avec notre calculateur d'amortissement d'emprunt. Calculez vos mensualités, intérêts et tableau d'amortissement.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jourdelune.github.io/loan-tool/">
+    <meta property="twitter:title" content="Calculateur d'Amortissement d'Emprunt | Simulateur de Crédit">
+    <meta property="twitter:description" content="Simulez gratuitement votre crédit avec notre calculateur d'amortissement d'emprunt. Calculez vos mensualités, intérêts et tableau d'amortissement.">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculateur d'Amortissement d'Emprunt",
+            "description": "Simulez gratuitement votre crédit avec notre calculateur d'amortissement d'emprunt. Calculez vos mensualités, intérêts et tableau d'amortissement.",
+            "url": "https://jourdelune.github.io/loan-tool/",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "All",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "EUR"
+            }
+        }
+    </script>
 </head>
+
 <body>
-    <h1>Calculateur d'Amortissement d'Emprunt</h1>
-    
-    <div class="calculator-container">
-        <div class="form-container">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="montant">Montant de l'emprunt (€)</label>
-                    <input type="number" id="montant" value="100000" min="1">
+    <header>
+        <h1>Calculateur d'Amortissement d'Emprunt</h1>
+        <p class="intro">Simulez facilement votre crédit immobilier, auto ou personnel. Obtenez votre tableau d'amortissement détaillé et le coût total de votre emprunt.</p>
+    </header>
+
+    <main>
+        <div class="calculator-container">
+            <div class="form-container">
+                <h2>Paramètres de votre emprunt</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="montant">Montant de l'emprunt (€)</label>
+                        <input type="number" id="montant" value="100000" min="1" aria-describedby="montant-help">
+                        <small id="montant-help">Entrez le montant total que vous souhaitez emprunter</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taux">Taux d'intérêt annuel (%)</label>
+                        <input type="number" id="taux" value="12" min="0.01" max="100" step="0.01" aria-describedby="taux-help">
+                        <small id="taux-help">Entrez le taux d'intérêt annuel proposé par votre banque</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duree">Durée (années)</label>
+                        <input type="number" id="duree" value="5" min="1" aria-describedby="duree-help">
+                        <small id="duree-help">Entrez la durée totale de votre emprunt en années</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="periodicite">Périodicité</label>
+                        <select id="periodicite" aria-describedby="periodicite-help">
+                            <option value="mensuel">Mensuel</option>
+                            <option value="trimestriel">Trimestriel</option>
+                            <option value="semestriel">Semestriel</option>
+                            <option value="annuel" selected>Annuel</option>
+                        </select>
+                        <small id="periodicite-help">Choisissez la fréquence de remboursement de votre emprunt</small>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="taux">Taux d'intérêt annuel (%)</label>
-                    <input type="number" id="taux" value="12" min="0.01" max="100" step="0.01">
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="amortissement_constant">
+                    <label for="amortissement_constant">Amortissement constant</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="duree">Durée (années)</label>
-                    <input type="number" id="duree" value="5" min="1">
-                </div>
-                
-                <div class="form-group">
-                    <label for="periodicite">Périodicité</label>
-                    <select id="periodicite">
-                        <option value="mensuel">Mensuel</option>
-                        <option value="trimestriel">Trimestriel</option>
-                        <option value="semestriel">Semestriel</option>
-                        <option value="annuel" selected>Annuel</option>
-                    </select>
+
+                <button id="calculer" aria-label="Calculer l'amortissement">Calculer</button>
+            </div>
+
+            <div class="results-container">
+                <h2>Résultats de votre simulation</h2>
+                <div id="tableau-results">
+                    <table id="tableau-amortissement" aria-label="Tableau d'amortissement">
+                        <caption>Tableau d'amortissement détaillé</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Période</th>
+                                <th scope="col">Annuité</th>
+                                <th scope="col">Intérêt</th>
+                                <th scope="col">Amortissement</th>
+                                <th scope="col">Capital restant dû</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Les données seront insérées ici par JavaScript -->
+                        </tbody>
+                    </table>
+
+                    <div class="summary">
+                        <div class="summary-item">
+                            <div class="summary-label">Coût total de l'emprunt</div>
+                            <div class="summary-value" id="cout-total">0 €</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Total des intérêts</div>
+                            <div class="summary-value" id="total-interets">0 €</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-label">Mensualité moyenne</div>
+                            <div class="summary-value" id="mensualite-moyenne">0 €</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="checkbox-group">
-                <input type="checkbox" id="amortissement_constant">
-                <label for="amortissement_constant">Amortissement constant</label>
-            </div>
-            
-            <button id="calculer">Calculer</button>
         </div>
-        
-        <div class="results-container">
-            <div id="tableau-results">
-                <table id="tableau-amortissement">
-                    <thead>
-                        <tr>
-                            <th>Période</th>
-                            <th>Annuité</th>
-                            <th>Intérêt</th>
-                            <th>Amortissement</th>
-                            <th>Capital restant dû</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Les données seront insérées ici par JavaScript -->
-                    </tbody>
-                </table>
-                
-                <div class="summary">
-                    <div class="summary-item">
-                        <div class="summary-label">Coût total de l'emprunt</div>
-                        <div class="summary-value" id="cout-total">0 €</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-label">Total des intérêts</div>
-                        <div class="summary-value" id="total-interets">0 €</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-label">Mensualité moyenne</div>
-                        <div class="summary-value" id="mensualite-moyenne">0 €</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    </main>
+
+    <footer>
+        <p>© 2025 Calculateur d'Amortissement d'Emprunt. Tous droits réservés.</p>
+        <p><small>Ce calculateur est fourni à titre informatif uniquement. Les résultats peuvent varier selon les conditions réelles de votre banque.</small></p>
+    </footer>
+
     <script src="js/app.js"></script>
 </body>
+
 </html>

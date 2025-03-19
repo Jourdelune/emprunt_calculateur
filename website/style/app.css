@@ -1,4 +1,5 @@
 /* Modern Dark/Purple Theme for Loan Calculator */
+
 :root {
     --primary: #8E2DE2;
     --primary-light: #a855f7;
@@ -11,10 +12,11 @@
     --border-radius: 8px;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
-    --input-bg: #2a2a40; /* Couleur de fond des inputs plus opaque */
-  }
-  
-  body {
+    --input-bg: #2a2a40;
+    /* Couleur de fond des inputs plus opaque */
+}
+
+body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
     color: var(--light);
@@ -22,9 +24,9 @@
     padding: 20px;
     line-height: 1.6;
     min-height: 100vh;
-  }
-  
-  h1 {
+}
+
+h1 {
     text-align: center;
     margin: 2rem 0;
     font-weight: 700;
@@ -35,47 +37,49 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-  }
-  
-  .calculator-container {
+}
+
+.calculator-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 30px;
     padding: 0 20px;
-  }
-  
-  .form-container {
+}
+
+.form-container {
     background: rgba(30, 30, 46, 0.8);
     border-radius: var(--border-radius);
     padding: 30px;
     box-shadow: var(--box-shadow);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(142, 45, 226, 0.2);
-  }
-  
-  .form-grid {
+}
+
+.form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-bottom: 20px;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
-  }
-  
-  label {
+}
+
+label {
     margin-bottom: 8px;
     font-weight: 500;
     color: var(--light);
     font-size: 0.95rem;
-  }
-  
-  input, select {
-    background-color: var(--input-bg); /* Fond opaque pour les inputs */
+}
+
+input,
+select {
+    background-color: var(--input-bg);
+    /* Fond opaque pour les inputs */
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 16px;
     border-radius: var(--border-radius);
@@ -83,63 +87,67 @@
     font-size: 1rem;
     transition: var(--transition);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  input:focus, select:focus {
+}
+
+input:focus,
+select:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 2px rgba(142, 45, 226, 0.25);
-  }
-  
-  /* Couleur de fond pour les options du select */
-  select option {
+}
+
+
+/* Couleur de fond pour les options du select */
+
+select option {
     background-color: var(--dark);
     color: white;
-  }
-  
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
     opacity: 1;
-  }
-  
-  .checkbox-group {
+}
+
+.checkbox-group {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
-  }
-  
-  .checkbox-group label {
+}
+
+.checkbox-group label {
     margin-bottom: 0;
     margin-left: 10px;
-  }
-  
-  input[type="checkbox"] {
+}
+
+input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    background-color: var(--input-bg); /* Fond opaque pour la case à cocher */
+    background-color: var(--input-bg);
+    /* Fond opaque pour la case à cocher */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  input[type="checkbox"]:checked::before {
+}
+
+input[type="checkbox"]:checked::before {
     content: "✓";
     color: var(--primary);
     font-size: 16px;
     font-weight: bold;
-  }
-  
-  input[type="checkbox"]:checked {
+}
+
+input[type="checkbox"]:checked {
     background-color: rgba(142, 45, 226, 0.2);
     border-color: var(--primary);
-  }
-  
-  button {
+}
+
+button {
     background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
     color: white;
     border: none;
@@ -151,18 +159,18 @@
     transition: var(--transition);
     width: 100%;
     box-shadow: 0 4px 12px rgba(142, 45, 226, 0.3);
-  }
-  
-  button:hover {
+}
+
+button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(142, 45, 226, 0.4);
-  }
-  
-  button:active {
+}
+
+button:active {
     transform: translateY(0);
-  }
-  
-  .results-container {
+}
+
+.results-container {
     background: rgba(30, 30, 46, 0.8);
     border-radius: var(--border-radius);
     padding: 30px;
@@ -170,16 +178,16 @@
     backdrop-filter: blur(10px);
     border: 1px solid rgba(142, 45, 226, 0.2);
     overflow: auto;
-  }
-  
-  #tableau-amortissement {
+}
+
+#tableau-amortissement {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
     color: var(--light);
-  }
-  
-  #tableau-amortissement th {
+}
+
+#tableau-amortissement th {
     background-color: rgba(142, 45, 226, 0.2);
     color: white;
     padding: 12px 15px;
@@ -188,18 +196,18 @@
     position: sticky;
     top: 0;
     z-index: 10;
-  }
-  
-  #tableau-amortissement td {
+}
+
+#tableau-amortissement td {
     padding: 12px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  #tableau-amortissement tr:hover td {
+}
+
+#tableau-amortissement tr:hover td {
     background-color: rgba(142, 45, 226, 0.1);
-  }
-  
-  .summary {
+}
+
+.summary {
     background: linear-gradient(90deg, rgba(142, 45, 226, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
     border: 1px solid rgba(142, 45, 226, 0.3);
     border-radius: var(--border-radius);
@@ -208,83 +216,88 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 30px;
-  }
-  
-  .summary-item {
+}
+
+.summary-item {
     text-align: center;
-  }
-  
-  .summary-label {
+}
+
+.summary-label {
     color: var(--gray);
     font-size: 0.9rem;
     margin-bottom: 8px;
-  }
-  
-  .summary-value {
+}
+
+.summary-value {
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
-  }
-  
-  #cout-total {
+}
+
+#cout-total {
     color: var(--primary-light);
-  }
-  
-  #total-interets {
+}
+
+#total-interets {
     color: var(--primary);
-  }
-  
-  #mensualite-moyenne {
+}
+
+#mensualite-moyenne {
     color: var(--success);
-  }
-  
-  /* Responsive design */
-  @media (max-width: 900px) {
+}
+
+
+/* Responsive design */
+
+@media (max-width: 900px) {
     .calculator-container {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-    
     .form-grid {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-    
     .summary {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-  }
-  
-  @media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
     h1 {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
-    
-    .form-container, .results-container {
-      padding: 20px;
+    .form-container,
+    .results-container {
+        padding: 20px;
     }
-    
-    #tableau-amortissement th, 
+    #tableau-amortissement th,
     #tableau-amortissement td {
-      padding: 10px 8px;
-      font-size: 0.9rem;
+        padding: 10px 8px;
+        font-size: 0.9rem;
     }
-  }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
+}
+
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: var(--primary);
     border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: var(--primary-light);
-  }
+}
+
+.intro {
+    text-align: center;
+}
